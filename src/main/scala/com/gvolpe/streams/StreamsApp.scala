@@ -21,9 +21,8 @@ trait StreamDebug {
     stream map {a => s"debug: $a" } observe io.stdOutLines
 }
 
-// Defined alias types for Sink and Source. In general, F is always a Task
+// Defined alias types more meaningful. In general, F is always a Task
 object StreamTypes {
-  type Sink[F[_], A] = Process[F, A => F[Unit]]
   type Source[F[_], A] = Process[F, A]
   type Stream[F[_], A] = Process[F, A]
 }

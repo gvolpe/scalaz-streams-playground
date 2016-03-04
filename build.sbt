@@ -1,4 +1,4 @@
-name := """scalaz-task-playground"""
+name := """scalaz-streams-playground"""
 
 version := "1.0"
 
