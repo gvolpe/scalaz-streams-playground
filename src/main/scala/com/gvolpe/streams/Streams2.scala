@@ -12,7 +12,7 @@ object Streams2 extends App {
   type ProcessT[A] = Process[Task, A]
 
   val input = Seq("1", "2", "FOO", "3")
-  
+
   val source: ProcessT[String] = Process.emitAll(input)
   val output: Seq[StreamWriter[Task, String, Int]] = input map sum
 

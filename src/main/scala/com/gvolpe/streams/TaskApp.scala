@@ -1,5 +1,6 @@
 package com.gvolpe.streams
 
+import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 import scala.util.{Failure, Success}
@@ -34,6 +35,8 @@ object TaskApp extends App with TaskUtils {
   } yield v1 + v2
 
   println(sum.attemptRun)
+
+  Task.schedule(println("Scheduled task"), 10 seconds).run
 
 }
 
